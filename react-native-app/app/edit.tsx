@@ -9,14 +9,12 @@ export default function EditNote() {
     const [errorMsg, setErrorMsg] = useState("");
 
     const getLocation = async () => {
-        // prośba o uprawnienia
         const { status } = await Location.requestForegroundPermissionsAsync();
         if (status !== "granted") {
             setErrorMsg("Brak uprawnien");
             return;
         }
 
-        // pobranie pozycji
         const pos = await Location.getCurrentPositionAsync({});
         setLocation({
             lat: pos.coords.latitude,

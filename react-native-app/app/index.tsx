@@ -28,6 +28,19 @@ export default function NotesList() {
             </Pressable>
         </Link>
 
+        <Link href="/settings" asChild>
+            <Pressable
+                style={{
+                    backgroundColor: "#2196F3",
+                    padding: 12,
+                    borderRadius: 8,
+                    margin: 10,
+                }}
+            >
+                <Text style={{ color: "white", textAlign: "center", fontWeight: "bold" }}>Ustawienia</Text>
+            </Pressable>
+        </Link>
+
         <FlatList
             data={notes}
             keyExtractor={(item) => item.id.toString()}
